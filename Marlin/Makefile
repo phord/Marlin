@@ -40,13 +40,14 @@
 MCU = atmega644p 
 
 #Arduino install directory
-INSTALL_DIR = /usr/share/arduino/
+#INSTALL_DIR = /usr/share/arduino/
+INSTALL_DIR = /home/phord/bin/arduino/arduino-0022
 
 F_CPU = 20000000
 
 UPLOAD_RATE = 115200
-AVRDUDE_PROGRAMMER = arduino
-PORT = /dev/arduino
+AVRDUDE_PROGRAMMER = stk500v2
+PORT = /dev/ttyUSB0
 
 TARGET = $(notdir $(CURDIR))
 
