@@ -91,7 +91,7 @@
 #define Z_DIR_PIN 25
 #define Z_ENABLE_PIN 24
 #define Z_MIN_PIN 1
-#define Z_MAX_PIN 
+#define Z_MAX_PIN 0
 
 //extruder pins
 #define E0_STEP_PIN 28
@@ -491,7 +491,9 @@
 #define KNOWN_BOARD 1
 
 #ifndef __AVR_ATmega644P__
-    #error Oops!  Make sure you have 'Sanguino' selected from the 'Tools -> Boards' menu.
+#ifndef __AVR_ATmega1284P__
+#error Oops!  Make sure you have 'Sanguino' selected from the 'Tools -> Boards' menu.
+#endif
 #endif
 
 //x axis pins
@@ -555,13 +557,16 @@
 *
 ****************************************************************************************/
 #if MOTHERBOARD == 62
+#undef MOTHERBOARD
 #define MOTHERBOARD 6
 #define SANGUINOLOLU_V_1_2 
 #endif
 #if MOTHERBOARD == 6
 #define KNOWN_BOARD 1
 #ifndef __AVR_ATmega644P__
+#ifndef __AVR_ATmega1284P__
 #error Oops!  Make sure you have 'Sanguino' selected from the 'Tools -> Boards' menu.
+#endif
 #endif
 
 #define X_STEP_PIN         15
@@ -882,7 +887,9 @@
 #define MOTHERBOARD 6
 #define KNOWN_BOARD 1
 #ifndef __AVR_ATmega644P__
+#ifndef __AVR_ATmega1284P__
 #error Oops!  Make sure you have 'Sanguino' selected from the 'Tools -> Boards' menu.
+#endif
 #endif
 
 #define X_STEP_PIN         15
